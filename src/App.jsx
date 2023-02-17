@@ -5,18 +5,18 @@ import { useDispatch } from 'react-redux';
 import { Global } from '@emotion/react';
 
 import Header from './components/Header';
-import HomePage from './HomePage';
-import AboutPage from './AboutPage';
-import RestaurantsPage from './RestaurantsPage';
-import RestaurantPage from './RestaurantPage';
-import NotFoundPage from './NotFoundPage';
-import LoginPage from './LoginPage';
+import HomePage from './pages/HomePage/HomePage';
+import AboutPage from './pages/AboutPage/AboutPage';
+import RestaurantsPage from './pages/RestaurantsPage/RestaurantsPage';
+import RestaurantPage from './pages/RestaurantPage/RestaurantPage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import LoginPage from './pages/LoginPage/LoginPage';
 
 import { setAccessToken } from './slice';
 
 import { loadItem } from './services/storage';
 
-import reset from './resetStyle';
+import reset from './assets/resetStyle';
 
 export default function App() {
   const dispatch = useDispatch();
