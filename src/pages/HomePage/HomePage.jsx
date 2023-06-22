@@ -4,7 +4,7 @@ import SlideContainer from '../../components/SlideContainer';
 
 const Background = styled.div({
   backgroundColor: '#FFBD60',
-  height: '90vh',
+  height: '100vh',
   width: '100%',
 });
 
@@ -42,8 +42,16 @@ export default function HomePage() {
       <Container>
         <SlideContainer />
         <Content>
-          <p>찾고 싶은 맛집을<br />한번에 볼 수 있어요!</p>
-          <p>전국에 있는 모든 식당의 리뷰와 평점을<br />확인할 수 있어요.</p>
+          <p>
+            찾고 싶은 맛집을
+            <br />
+            한번에 볼 수 있어요!
+          </p>
+          <p>
+            전국에 있는 모든 식당의 리뷰와 평점을
+            <br />
+            확인할 수 있어요.
+          </p>
         </Content>
       </Container>
     </Background>
