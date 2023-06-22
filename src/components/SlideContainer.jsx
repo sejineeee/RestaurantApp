@@ -1,8 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import styled from '@emotion/styled';
 
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import {
+  IoIosArrowBack,
+  IoIosPause,
+  IoIosPlay,
+  IoIosArrowForward,
+} from 'react-icons/io';
 
 import sliderImg from '../assets/slider-img';
 
@@ -42,11 +47,25 @@ const Button = styled.button({
 export default function SlideContainer() {
   const [count, setCount] = useState(1);
   const [transition, setTransition] = useState('');
+  const [pause, setPause] = useState(false);
 
   const slideList = [...sliderImg];
 
   slideList.unshift(slideList[slideList.length - 1]);
   slideList.push(slideList[1]);
+
+  useEffect(() => {
+    let timer;
+    if (!pause) {
+      timer = setInterval(() => {
+        setCount((prev) => (prev + 1) % slideList.length);
+      }, 2500);
+    }
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [pause]);
 
   const transitionList = {
     transition: () => 'transform ease-in-out 1s',
@@ -73,30 +92,27 @@ export default function SlideContainer() {
     }
   }
 
+  function handlePause() {
+    setPause(!pause);
+  }
+
   return (
     <div>
       <SlideWrap>
         <SlideBox count={count} transition={transition}>
           {slideList.map((slide, index) => (
-            <SlideItem
-              key={index}
-              src={slide.src}
-              alt={slide.alt}
-            />
+            <SlideItem key={index} src={slide.src} alt={slide.alt} />
           ))}
         </SlideBox>
       </SlideWrap>
       <ButtonContainer>
-        <Button
-          type="button"
-          onClick={handlePrevClick}
-        >
+        <Button type="button" onClick={handlePrevClick}>
           <IoIosArrowBack />
         </Button>
-        <Button
-          type="button"
-          onClick={handleNextClick}
-        >
+        <Button type="button" onClick={handlePause}>
+          {pause ? <IoIosPlay /> : <IoIosPause />}
+        </Button>
+        <Button type="button" onClick={handleNextClick}>
           <IoIosArrowForward />
         </Button>
       </ButtonContainer>
