@@ -30,6 +30,7 @@ export default function LoginFormContainer() {
   useEffect(() => {
     if (accessToken) {
       navigate('/');
+      window.location.reload();
     }
   }, [handleSubmit]);
 
