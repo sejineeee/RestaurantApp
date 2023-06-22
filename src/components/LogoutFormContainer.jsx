@@ -10,6 +10,7 @@ export default function LogoutFormContainer() {
   function handleClick() {
     dispatch(logout());
     localStorage.removeItem('accessToken');
+    window.location.reload();
   }
 
   return <LogoutForm onClick={handleClick} />;
