@@ -5,6 +5,8 @@ import MenuItem from '../../assets/emotion/MenuItem';
 
 import { categoriesImg } from '../../assets/selectionImg';
 
+import PropTypes from 'prop-types';
+
 const Title = styled.div({
   fontFamily: 'Noto Sans KR, sans-serif',
   fontSize: '2.4rem',
@@ -24,7 +26,7 @@ export default function Categories({
   const CategoryImg = ({ category, onClick }) => categoriesImg.map((categoryImg) => (
     categoryImg?.alt === category.name
       ? (
-        <ImgWrap onClick={() => onClick(category.id)}>
+        <ImgWrap key={category.id} onClick={() => onClick(category.id)}>
           <img src={categoryImg.src} alt={categoryImg.alt} />
         </ImgWrap>
       )
@@ -48,4 +50,10 @@ export default function Categories({
       </MenuList>
     </>
   );
+}
+
+Categories.propTypes = {
+  categories: PropTypes.array,
+  selectedCategory: PropTypes.string,
+  onClick: PropTypes.func,
 }

@@ -5,6 +5,8 @@ import MenuItem from '../../assets/emotion/MenuItem';
 
 import { regionsImg } from '../../assets/selectionImg';
 
+import PropTypes from 'prop-types';
+
 const Title = styled.div({
   fontFamily: 'Noto Sans KR, sans-serif',
   fontSize: '2.4rem',
@@ -24,7 +26,7 @@ export default function Regions({
   const MenuItemImage = ({ region, onClick }) => regionsImg.map((regionImg) => (
     regionImg.alt === region.name
       ? (
-        <ImgWrap onClick={() => onClick(region.id)}>
+        <ImgWrap key={regionImg.id} onClick={() => onClick(region.id)}>
           <img src={regionImg.src} alt={regionImg.alt} />
         </ImgWrap>
       )
@@ -61,4 +63,10 @@ export default function Regions({
       </MenuList>
     </>
   );
+}
+
+Regions.propTypes = {
+  regions: PropTypes.array,
+  onClick: PropTypes.func,
+  selectedRegion: PropTypes.string,
 }
