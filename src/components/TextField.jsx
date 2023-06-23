@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import PropTypes from 'prop-types';
+
 const Container = styled.div({
   '& label': {
     fontSize: '2.4rem',
@@ -45,4 +47,12 @@ export default function TextField({
       />
     </Container>
   );
+}
+
+TextField.propTypes = {
+  label: PropTypes.string,
+  type: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
 }

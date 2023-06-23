@@ -4,6 +4,8 @@ import styled from '@emotion/styled';
 
 import TextField from './TextField';
 
+import PropTypes from 'prop-types';
+
 const Button = styled.button({
   fontFamily: 'Noto Sans KR, sans-serif',
   fontSize: '2.2rem',
@@ -43,3 +45,9 @@ function ReviewForm({ fields, onChange, onSubmit }) {
 }
 
 export default React.memo(ReviewForm);
+
+ReviewForm.propTypes = {
+  fields: PropTypes.object,
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+}

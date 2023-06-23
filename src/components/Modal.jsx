@@ -8,6 +8,8 @@ import { setIsOpenModal } from '../slice';
 
 import ReviewForm from './ReviewForm';
 
+import PropTypes from 'prop-types';
+
 const Overlay = styled.div({
   position: 'fixed',
   width: '100%',
@@ -98,4 +100,11 @@ export default function Modal({
       </Container>
     </Overlay>
   );
+}
+
+Modal.propTypes = {
+  title: PropTypes.string,
+  fields: PropTypes.object,
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
 }

@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import PropTypes from 'prop-types';
+
 const Container = styled.div({
   display: 'flex',
   flexDirection: 'column',
@@ -79,4 +81,10 @@ export default function LoginForm({ fields, onChange, onSubmit }) {
       </Button>
     </>
   );
+}
+
+LoginForm.propTypes = {
+  fields: PropTypes.object,
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
 }

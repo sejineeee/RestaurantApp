@@ -4,6 +4,8 @@ import styled from '@emotion/styled';
 
 import { get } from '../../utils';
 
+import PropTypes from 'prop-types';
+
 const Title = styled.p({
   fontFamily: 'Noto Sans KR, sans-serif',
   fontWeight: 'bold',
@@ -79,4 +81,8 @@ export default function RestaurantsContainer({ onClickRestaurant }) {
       </List>
     </>
   );
+}
+
+RestaurantsContainer.propTypes = {
+  onClickRestaurant: PropTypes.func,
 }

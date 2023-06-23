@@ -12,6 +12,8 @@ import RestaurantDetail from './RestaurantDetail';
 import Reviews from './Reviews';
 import Modal from '../../components/Modal';
 
+import PropTypes from 'prop-types';
+
 export default function RestaurantContainer({ restaurantId }) {
   const dispatch = useDispatch();
 
@@ -56,4 +58,8 @@ export default function RestaurantContainer({ restaurantId }) {
       <Reviews reviews={restaurant.reviews} />
     </>
   );
+}
+
+RestaurantContainer.propTypes = {
+  restaurantId: PropTypes.string,
 }

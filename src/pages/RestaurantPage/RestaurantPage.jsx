@@ -4,6 +4,8 @@ import styled from '@emotion/styled';
 
 import RestaurantContainer from './RestaurantContainer';
 
+import PropTypes from 'prop-types';
+
 const Container = styled.div({
   width: '90%',
   margin: '0 auto',
@@ -19,4 +21,8 @@ export default function RestaurantPage({ params }) {
       <RestaurantContainer restaurantId={id} />
     </Container>
   );
+}
+
+RestaurantPage.propTypes = {
+  params: PropTypes.string,
 }

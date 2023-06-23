@@ -10,6 +10,8 @@ import Pagination from '../../components/Pagination';
 
 import { setIsOpenModal } from '../../slice';
 
+import PropTypes from 'prop-types';
+
 const Container = styled.div({
   fontFamily: 'Noto Sans KR, sans-serif',
 });
@@ -123,3 +125,7 @@ function Reviews({ reviews }) {
 }
 
 export default React.memo(Reviews);
+
+Reviews.propTypes = {
+  reviews: PropTypes.array,
+}

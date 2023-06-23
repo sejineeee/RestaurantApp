@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import PropTypes from 'prop-types';
+
 const MenuList = styled.ul({
   marginLeft: '48px',
 });
@@ -26,4 +28,8 @@ export default function MenuItems({ menuItems }) {
       ))}
     </MenuList>
   );
+}
+
+MenuItems.propTypes = {
+  menuItems: PropTypes.array,
 }

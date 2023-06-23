@@ -6,6 +6,8 @@ import styled from '@emotion/styled';
 
 import MenuItems from './MenuItems';
 
+import PropTypes from 'prop-types';
+
 const Container = styled.div({
   fontFamily: 'Noto Sans KR, sans-serif',
   width: '500px',
@@ -59,3 +61,7 @@ function RestaurantDetail({ restaurant }) {
 }
 
 export default React.memo(RestaurantDetail);
+
+RestaurantDetail.propTypes = {
+  restaurant: PropTypes.object,
+}

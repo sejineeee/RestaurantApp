@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import PropTypes from 'prop-types';
+
 const Button = styled.button({
   backgroundColor: 'transparent',
   border: 'none',
@@ -21,4 +23,8 @@ export default function LogoutForm({ onClick }) {
       Log out
     </Button>
   );
+}
+
+LogoutForm.propTypes = {
+  onClick: PropTypes.func
 }

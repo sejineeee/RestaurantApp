@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import PropTypes from 'prop-types';
+
 const SlideImg = styled.img({
   width: '514px',
   height: '514px',
@@ -13,4 +15,9 @@ export default function SlideItem({ src, alt }) {
       alt={alt}
     />
   );
+}
+
+SlideItem.propTypes = {
+  src: PropTypes.string,
+  alt: PropTypes.string,
 }

@@ -5,6 +5,8 @@ import styled from '@emotion/styled';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { RxDoubleArrowLeft, RxDoubleArrowRight } from 'react-icons/rx';
 
+import PropTypes from 'prop-types';
+
 const Container = styled.div({
   padding: '16px 0',
   display: 'flex',
@@ -118,3 +120,10 @@ function Pagination({
 }
 
 export default Pagination;
+
+Pagination.propTypes = {
+  totalCount: PropTypes.number,
+  limit: PropTypes.number,
+  page: PropTypes.number,
+  setPage: PropTypes.func,
+}
