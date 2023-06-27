@@ -2,6 +2,10 @@ const path = require('path');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/index.jsx'),
+  output: {
+    filename: '[name].js',
+    path: __dirname + '/dist'
+  },
   module: {
     rules: [
       {
